@@ -31,7 +31,7 @@ Simple Google Assistant with hotword activation from Snowboy setup for Raspberry
     `pip install --upgrade google-auth-oauthlib[tool]`
     `google-oauthlib-tool --client-secrets path/to/client_secret_XXXXX.json --scope https://www.googleapis.com/auth/assistant-sdk-prototype --save --headless`
   * Test using the sample
-    `python -m googlesamples.assistant`
+    `python -m googlesamples.assistant.grpc.pushtotalk`
     Issue commands after pressing `enter` and if you did all the steps above Google Assistant should respond.
 
 ***PS** On Raspberry Pi Zero W this setup takes about 30-40 minutes.*
