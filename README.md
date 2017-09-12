@@ -36,6 +36,29 @@ Simple Google Assistant with hotword activation from Snowboy setup for Raspberry
 
 ***PS** On Raspberry Pi Zero W this setup takes about 30-40 minutes.*
 
+#### 1.1
+
+Run command to load drivers? $sudo modprobe snd_bcm2835
+
+Insert this
+
+    ´pcm.!default {
+         type plug
+         slave {
+              pcm "hw:1,0"
+         }
+    }
+
+    ctl.!default {
+         type hw
+         card 1
+    }´
+
+into /etc/asound.conf
+sudo reboot
+
+from http://www.linuxcircle.com/2013/05/08/raspberry-pi-microphone-setup-with-usb-sound-card/
+
 #### 2. [Snowboy Python setup on Pi](http://docs.kitt.ai/snowboy/) - [Github](https://github.com/Kitt-AI/snowboy)
   * (Optional - The required files are already in this repo) Download Snowboy [compiled library for all versions of Pi + demo](https://s3-us-west-2.amazonaws.com/snowboy/snowboy-releases/rpi-arm-raspbian-8.0-1.2.0.tar.bz2)
   *  Install dependencies
